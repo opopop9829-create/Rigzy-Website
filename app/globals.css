@@ -1,0 +1,79 @@
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+  --project-gradient: linear-gradient(135deg, #1e1b4b 0%, #7c3aed 50%, #4f46e5 100%);
+}
+
+@theme {
+  --font-sans: var(--font-outfit), sans-serif;
+}
+
+/* Custom Selection style */
+::selection {
+  background-color: #5b21b6; /* Dark Purple */
+  color: #ffffff;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 9999px;
+  border: 2px solid #09090b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #000000;
+}
+
+body {
+  background: var(--project-gradient);
+  color: var(--foreground);
+  font-family: var(--font-outfit), sans-serif;
+  overflow-x: hidden;
+  transition: background 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  min-height: 100vh;
+}
+
+/* Subtle glowing vignette effect on sections */
+.glow-section {
+  position: relative;
+}
+
+.glow-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Keyframe animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(124, 58, 237, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(124, 58, 237, 0.5);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 3s infinite;
+}
