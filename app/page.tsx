@@ -7,6 +7,7 @@ import { projects } from "@/data/projects";
 import ProjectScroll from "@/components/ProjectScroll";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import YouTubeGallery from "@/components/YouTubeGallery";
 
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -400,6 +401,7 @@ export default function Home() {
               </p>
             </div>
           </section>
+          <YouTubeGallery />
         </motion.main>
       </AnimatePresence>
 
